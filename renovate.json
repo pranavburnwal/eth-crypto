@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "ignoreDeps": [
+    "webpack"
+  ],
+  "statusCheckVerify": true,
+  "automerge": true,
+  "rebaseStalePrs": true,
+  "prHourlyLimit": 4
+}

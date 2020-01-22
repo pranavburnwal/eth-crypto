@@ -1,6 +1,6 @@
 # Tutorial: Encrypt and sign a message
 
-With ethereum-keys you cannot only interact with the blockchain, but also use them to send message over mutual untrusted channels in a secure way. In this tutorial we will use ethereum-identites to send messages like you would do in an decentralized chat-app.
+With ethereum-keys you cannot only interact with the blockchain, but also use them to send messages over mutual untrusted channels in a secure way. In this tutorial we will use ethereum-identites to send messages like you would do in an decentralized chat-app.
 
 ## Prerequisites
 
@@ -68,7 +68,7 @@ const decryptedPayload = JSON.parse(decrypted);
 // check signature
 const senderAddress = EthCrypto.recover(
     decryptedPayload.signature,
-    EthCrypto.hash.keccak256(payload.message)
+    EthCrypto.hash.keccak256(decryptedPayload.message)
 );
 
 console.log(
@@ -83,7 +83,7 @@ console.log(
 ## Creating an answer
 
 Now that `Bob` got the message, he can also answer back to alice.
-To to this he has to recover the publicKey of alice with `recoverPublicKey()`.
+To do this he has to recover the publicKey of alice with `recoverPublicKey()`.
 
 ```javascript
 const answerMessage = 'And I am Bob Kelso';
